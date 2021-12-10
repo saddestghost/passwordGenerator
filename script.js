@@ -16,6 +16,24 @@
 
 
 
+// Write password to the #password input
+
+function generatePassword(test) {
+    var characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()";
+    var passwordLength = (8)
+    for (var i = 0; i <= passwordLength; i++) {
+    function getRandomInt (min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min);
+    
+    }
+    }
+    
+    prompt("Do you want to create a password?");    
+    prompt("Password must be between 8 and 128 characters");
+    
+}
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -23,23 +41,12 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  var characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()";
-  var passwordLength = (8 - 128)////////////
-    for (var i = 0; i <= passwordLength; i++) {
-        var randomNumber = Math.floor(Math.random() * characters.length);
-        password += characters.substring(randomNumber, randomNumber +1);
-    }
-    
-    document.getElementById("password").value = password;
-    
-    }
-  
-
-  passwordText.value = password;
-
-
-
 }
+
+  passwordText.value = 
+
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
