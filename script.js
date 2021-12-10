@@ -35,6 +35,9 @@ function generatePassword(test) {
     
     prompt("Do you want to create a password?");    
     prompt("Password must be between 8 and 128 characters");
+    prompt("Do you want to include uppercase characters?");
+    prompt("Do you want to include lowercase characters?")
+    prompt("Do you want to include special characters?");
     
 }
 // Assignment Code
@@ -46,7 +49,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 }
 
-  passwordText.value = 
+  passwordText.value = call(writePassword)
 
 
 
