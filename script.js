@@ -19,10 +19,13 @@
 // Write password to the #password input
 
 function generatePassword(test) {
-    var characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()";
-    var passwordLength = (8)
+    var lowerChars = ("abcdefghijklmnopqrstuvwxyz");
+    var upperChars = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    var numbers = (1, 2, 3, 4, 5, 6, 7, 8, 9, 0);
+    var special = ("!@#$%^&*()");
+    var passwordLength 
     for (var i = 0; i <= passwordLength; i++) {
-    function getRandomInt (min, max) {
+    function getRandomInt(min: 8, max: 128): {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
