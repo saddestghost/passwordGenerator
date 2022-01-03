@@ -17,14 +17,14 @@
 
 
 //Writing string to pull from depending on user input
-let lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-let number = ["1","2","3","4","5","6","7","8","9","0"]
-let upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-let special = ["!","@","#","$","%","&","?"]
+let lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+let number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+let upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+let special = ["!", "@", "#", "$", "%", "&", "?"]
 
-
+var generateBtn = document.querySelector("#generate");
 //Function to collect input on what user wants in password
-function startPrompt(){
+function startPrompt() {
     let password = []
     let allPossible = []
     let length = prompt("length of password, between 8 and 128 characters")
@@ -33,25 +33,30 @@ function startPrompt(){
     let third = confirm("Do you want to include numbers?")
     let fourth = confirm("Do you want to include special characters?")
 
-    if(first){
-        allPossible = [...allPossible,...lower]
+    if (first) {
+        allPossible = [...allPossible, ...lower]
     }
-    if(second){
-        allPossible = [...allPossible,...number]
+    if (second) {
+        allPossible = [...allPossible, ...number]
     }
-    if(third){
-        allPossible = [...allPossible,...upper]
+    if (third) {
+        allPossible = [...allPossible, ...upper]
     }
-    if(fourth){
-        allPossible = [...allPossible,...special]
+    if (fourth) {
+        allPossible = [...allPossible, ...special]
     }
 
-    for(let i = 0; i < length;i++){
-        let randomChar = allPossible[Math.floor(Math.random() * allPossible.length)] 
+    for (let i = 0; i < length; i++) {
+        let randomChar = allPossible[Math.floor(Math.random() * allPossible.length)]
         password.push(randomChar)
     }
+    return password.join("")
 
-    console.log(password)
 }
 
-startPrompt()
+function writePassword() {
+    var password = startPrompt();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password
+}
+document.getElementById("generate").addEventListener("click", writePassword)
